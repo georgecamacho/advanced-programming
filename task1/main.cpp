@@ -9,8 +9,8 @@ void initialise() {
     cout << "Initialising Game..." << endl;
 }
 
-// terminateGame used as function name instead of terminate as the std library already has a terminate function, which conflicts
-// Other option would be to add std in front of cout & endl
+// terminateGame used as function name due to conflict with terminate function in std library 
+// Alternate option: remove std namespace & add std::cout, std::endl
 void terminateGame() {
     cout << "Terminating game..." << endl;
 }

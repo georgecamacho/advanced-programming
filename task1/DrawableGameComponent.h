@@ -15,5 +15,5 @@ class DrawableGameComponent : public GameComponent {
         const int SCREEN_WIDTH = 80;
         Direction direction;
         DrawableGameComponent(int x, int y);
-        void Update(const tm* timeInvoked);
+        void Update(const tm* eventTime);
 };

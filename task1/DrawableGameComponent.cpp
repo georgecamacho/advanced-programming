@@ -14,6 +14,6 @@ void DrawableGameComponent::Draw() {
 
 }
 
-void DrawableGameComponent::Update(const tm* timeInvoked) {
+void DrawableGameComponent::Update(const tm* eventTime) {
 
 }

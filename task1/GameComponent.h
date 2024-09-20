@@ -7,5 +7,5 @@ class GameComponent {
         int instances;
     public:
         GameComponent(void);
-        void Update(const tm* timeInvoked);
+        void Update(const tm*);
 };

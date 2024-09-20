@@ -1,7 +1,7 @@
 #pragma once
 #include "GameComponent.h"
 
-// Tpye definition FP for a function that returns void and no parameters
+// Type definition FP for a function that returns void and no parameters
 typedef void (*FP)();
 
 class Game {
@@ -16,9 +16,7 @@ class Game {
         Game(int maxComponents);
         void Add(GameComponent*);
         void Run();
-        void SetInitialise(FP initialise);
-        void SetTerminate(FP terminate);
+        void SetInitialise(FP init);
+        void SetTerminate(FP term);
         
-
-
 };
