@@ -7,6 +7,7 @@ class DrawableGameComponent : public GameComponent {
         int y;
         // enum used for Direction so options are limited and the user can't enter a random string that is unaccounted for
         enum Direction {Up, Down, Left, Right};
+        static const char* directionStr[];
         void ChangeDirection();
         void Draw();
     

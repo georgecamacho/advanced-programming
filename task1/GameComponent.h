@@ -4,8 +4,11 @@
 class GameComponent {
     private:
         int id;
-        int instances;
+        // static added to retain its value between function calls
+        // this variable is shared among all instances of this class
+        static int instances;
     public:
         GameComponent(void);
-        void Update(const tm*);
+        // virtual added so compiler knows that this function can be overridden in DrawableGameComponent class
+        virtual void Update(const tm* eventTime);
 };

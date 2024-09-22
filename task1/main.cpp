@@ -29,6 +29,8 @@ int main() {
     game->Add(new DrawableGameComponent(0, 0));
 
     game->Run();
+    
+    delete game;
 
     return 0;
 }

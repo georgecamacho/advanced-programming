@@ -14,6 +14,7 @@ class Game {
     
     public:
         Game(int maxComponents);
+        ~Game();
         void Add(GameComponent*);
         void Run();
         void SetInitialise(FP init);
