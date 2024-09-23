@@ -59,13 +59,13 @@ Task 2 creates a server and a client from the same codebase, using pre-processor
 ### Build Instructions
 To build this program with an executable of server and client, use the following commands from the task2 directory:
 
-#### Sever
+#### Server
 ```console
-clang++ -DIS_SERVER=true -std=c++11 main.cpp Server.cpp Client.cpp Comms.cpp SockException.cpp -o server
+clang++ -DIS_SERVER=true -std=c++11 main.cpp Server.cpp Client.cpp Comms.cpp Connection.cpp SockException.cpp -o server
 ```
 #### Client
 ```console
-clang++ -std=c++11 main.cpp Client.cpp Server.cpp Comms.cpp SockException.cpp -o client 
+clang++ -std=c++11 main.cpp Client.cpp Server.cpp Comms.cpp Connection.cpp SockException.cpp -o client  
 ```
 
 ### Usage
@@ -90,11 +90,17 @@ Your output should look similar to:
 Server: Bound to address and port successfully!
 The server has successfully started! Listening for connections...
 Server: Connection established with client successfully!
+Client: Hi
+You: Hi
+Client: QUIT
+Server: Connection closed successfully!
 ```
 
 #### Client
 ```console
 Client: Connected to server successfully!
-Connection has been established with server.
+You: Hi
+You: QUIT
+Server: Hi
 Client: Connection closed.
 ```
