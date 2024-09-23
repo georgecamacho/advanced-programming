@@ -2,6 +2,7 @@
 
 #include "Client.h"
 #include "Server.h"
+#include "SockException.h"
 
 using namespace std;
 
@@ -19,8 +20,8 @@ int main() {
         delete client;
         #endif
     }
-    catch(exception e) {
-        cout << "[ERROR] - error occurred during setup" << endl;
+    catch(const SockException& e) {
+        cout << e.what() << endl;
     }
 
     return 0;
