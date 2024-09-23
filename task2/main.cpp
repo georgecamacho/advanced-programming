@@ -12,12 +12,11 @@ int main() {
 
     try {
         #if IS_SERVER == true
-        Server* server = new Server(serverAddress, port);
-        server->start();
+        Server server(serverAddress, port);
+        server.start();
         #else
-        Client* client = new Client(serverAddress, port);
-        cout << "Connection has been established with server." << endl;
-        delete client;
+        Client client(serverAddress, port);
+        client.startChat();
         #endif
     }
     catch(const SockException& e) {

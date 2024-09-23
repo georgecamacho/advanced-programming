@@ -34,7 +34,27 @@ void Server::start(){
         throw SockException("[ERROR] - error while accepting connection", errno);
     }
 
+    connection = new Connection(inboundConnection);
     std::cout << "Server: Connection established with client successfully!" << std::endl;
     
+    startChat();
     close(inboundConnection);
+}
+
+void Server::startChat() {
+    std::string message;
+
+    while (true) {
+        message = connection->receiveMessage();
+        std::cout << "Client: " << message << std::endl;
+
+        if (message == "QUIT") {
+            break;
+        }
+
+        std::cout << "You: ";
+        std::getline(std::cin, message);
+
+        connection->sendMessage(message);
+    }
 }
