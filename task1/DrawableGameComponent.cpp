@@ -1,4 +1,5 @@
 #include "DrawableGameComponent.h"
+
 #include <algorithm>
 
 using namespace std;

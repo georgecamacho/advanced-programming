@@ -1,4 +1,5 @@
 #include "GameComponent.h"
+
 #include <_printf.h>
 
 // instances instantiated here to avoid being overwritten each time constructor is called

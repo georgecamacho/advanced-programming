@@ -1,4 +1,5 @@
 #include "Game.h"
+
 #include <unistd.h>
 
 Game::Game(int maxComponents) {
@@ -9,7 +10,7 @@ Game::Game(int maxComponents) {
 Game::~Game(){
     // destructor implemented to delete compononents to prevent memory leak
     for (int i = 0; i < componentCount; i++) {
-        
+
         delete components[i];
     }
     delete[] components;

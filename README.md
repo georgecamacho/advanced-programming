@@ -3,7 +3,7 @@ As part of my Software Engineering Apprenticeship Degree, I was given two tasks 
 
 ## Task 1
 
-Task 1 creates a simple game engine that consists of two classes representing entities within the game (GameComponent & DrawableGameComponent, which has an associated position – x,y) and a controlling class (Game) that manages the entities (see Task1AssignmentBrief.pdf).
+Task 1 creates a simple game engine that consists of two classes representing entities within the game (GameComponent & DrawableGameComponent, which has an associated position – x,y) and a controlling class (Game) that manages the entities (see Task1AssignmentBrief.txt).
 
 ### Dependencies
 - **Operating System**: MacOS
@@ -47,3 +47,4 @@ Terminating game...
 
 The actual results may differ as the second movement onwards is randomised. You will not get the same direction twice in a row.
 
+## Task 2

@@ -1,4 +1,5 @@
 #pragma once
+
 #include "GameComponent.h"
 
 // Type definition FP for a function that returns void and no parameters
