@@ -1,6 +1,7 @@
 #include "Server.h"
 
 #include <iostream>
+#include <thread>
 #include <unistd.h>
 
 #include "SockException.h"
@@ -38,10 +39,22 @@ void Server::start(){
     std::cout << "Server: Connection established with client successfully!" << std::endl;
     
     startChat();
-    close(inboundConnection);
+    delete connection;
 }
 
 void Server::startChat() {
+    std::thread receiveThread([&]() {
+        while (true) {
+            std::string clientMessage = connection->receiveMessage();
+            if (clientMessage.empty() || clientMessage == "QUIT") {
+                break;
+            }
+            std::cout << "\nClient: " << clientMessage << std::endl;
+            std::cout << "You: "; 
+            std::cout.flush();
+        }
+    });
+
     std::string message;
 
     while (true) {
@@ -52,9 +65,6 @@ void Server::startChat() {
             break;
         }
 
-        std::cout << "You: ";
-        std::getline(std::cin, message);
-
-        connection->sendMessage(message);
+        receiveThread.join();
     }
 }

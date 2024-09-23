@@ -1,7 +1,8 @@
 #include "Client.h"
 
-#include <unistd.h>
 #include <iostream>
+#include <thread>
+#include <unistd.h>
 
 #include "SockException.h"
 
@@ -24,6 +25,18 @@ Client::~Client() {
 }
 
 void Client::startChat() {
+    thread receiveThread([&]() {
+        while (true) {
+            string serverMessage = connection->receiveMessage();
+            if (serverMessage.empty() || serverMessage == "QUIT") {
+                break;
+            }
+            cout << "\nServer: " << serverMessage << endl;
+            cout << "You: ";
+            cout.flush();
+        }
+    });
+
     string message;
 
     while(true) {
@@ -36,7 +49,5 @@ void Client::startChat() {
             break;
         }
     }
-
-    string serverResponse = connection->receiveMessage();
-    cout << "Server: " << serverResponse << endl;
+    receiveThread.join();
 }
