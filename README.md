@@ -48,3 +48,53 @@ Terminating game...
 The actual results may differ as the second movement onwards is randomised. You will not get the same direction twice in a row.
 
 ## Task 2
+
+Task 2 creates a server and a client from the same codebase, using pre-processor directives in order to decide what part of the code is run. Full breakdown of the task can be found in Task2AssignmentBrief.txt.
+
+### Dependencies
+- **Operating System**: MacOS
+- **Compiler**: Clang++ (supports C++11)
+- **Development Tools**: A text editor or IDE (e.g., Visual Studio Code)
+
+### Build Instructions
+To build this program with an executable of server and client, use the following commands from the task2 directory:
+
+#### Sever
+```console
+clang++ -DIS_SERVER=true -std=c++11 main.cpp Server.cpp Client.cpp Comms.cpp SockException.cpp -o server
+```
+#### Client
+```console
+clang++ -std=c++11 main.cpp Client.cpp Server.cpp Comms.cpp SockException.cpp -o client 
+```
+
+### Usage
+The following commands must be run in separate terminals. To run the executables from the project directory, use the following commands:
+
+#### Server
+```console
+task2/server
+```
+
+#### Client
+```console
+task2/client
+```
+
+### Example Output
+
+#### Server
+Your output should look similar to:
+
+```console
+Server: Bound to address and port successfully!
+The server has successfully started! Listening for connections...
+Server: Connection established with client successfully!
+```
+
+#### Client
+```console
+Client: Connected to server successfully!
+Connection has been established with server.
+Client: Connection closed.
+```
